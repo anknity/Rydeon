@@ -71,7 +71,7 @@ export default function Hero() {
         const randomPoints = [
           "Departed Pickup Junction. Speed steady at 38km/h.",
           "Navigating high-visibility arterial bypass.",
-          "Passing RydeOn Smart Safehouse Checkpoint. Safe-logs green.",
+          "Passing Rydeon Smart Safehouse Checkpoint. Safe-logs green.",
           "Ensuring comfortable braking. Speed limited to 40km/h.",
           "Entering dropoff area lane. Helmets checked.",
         ];
@@ -201,7 +201,7 @@ export default function Hero() {
     setBooking(prev => ({ ...prev, step: 'ongoing' }));
     setRideLogs([
       "Secure Pin Verified.", 
-      "Welcome onboard RydeOn. Defensive routing enabled."
+      "Welcome onboard Rydeon. Defensive routing enabled."
     ]);
   };
 

@@ -37,7 +37,7 @@ export default function SafetyCommand() {
   const dispatchHelplines = [
     { name: "Direct Police Dispatch Hotline", number: "112", subtitle: "Instant GPS location push & vehicle details link" },
     { name: "National Women Helpline", number: "10911", subtitle: "Nationwide emergency voice responder team" },
-    { name: "RydeOn 24/7 Command Center", number: "1800-419-RYD", subtitle: "Physical escort bike backup dispatch within 3 mins" }
+    { name: "Rydeon 24/7 Command Center", number: "1800-419-RYD", subtitle: "Physical escort bike backup dispatch within 3 mins" }
   ];
 
   // Sirens oscillator audio synthesis (safe de-escalation/deterrent sound)

@@ -145,7 +145,7 @@ export default function FaqsAndFooter() {
               <div className="w-8 h-8 rounded-lg bg-brand-yellow-500 flex items-center justify-center shadow-md">
                 <ShieldCheck className="w-5 h-5 text-brand-navy-900" />
               </div>
-              <span className="text-xl font-black text-brand-charcoal">She<span className="text-brand-yellow-500">Ride</span></span>
+              <span className="text-xl font-black text-brand-charcoal">Ryde<span className="text-brand-yellow-500">on</span></span>
             </div>
             
             <p className="text-slate-500 font-medium text-xs leading-relaxed max-w-sm">
@@ -197,7 +197,7 @@ export default function FaqsAndFooter() {
 
         <div className="mt-16 pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
           <p className="text-[11px] text-slate-400 font-semibold flex items-center justify-center gap-1">
-            <span>© 2026 RydeOn Mobility. Made with care for safe commutes.</span>
+            <span>© 2026 Rydeon Mobility. Made with care for safe commutes.</span>
           </p>
           <div className="flex gap-6 text-[11px] text-slate-450 font-bold">
             <a href="#" className="hover:text-brand-yellow-600 transition-colors">Privacy Log</a>

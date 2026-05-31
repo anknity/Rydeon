@@ -43,12 +43,12 @@ export default function StatsAndMedia() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-20">
           <div className="lg:col-span-3">
             <div className="inline-block bg-white/5 border border-brand-yellow-500/25 px-5 py-2 rounded-full backdrop-blur-md">
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-yellow-500">About RydeOn</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-yellow-500">About Rydeon</span>
             </div>
           </div>
           <div className="lg:col-span-9 space-y-6">
             <h2 className="text-2xl sm:text-4xl text-white font-extrabold tracking-tight leading-snug">
-              Cities belong to women just as much as anyone else. Yet, safety concerns and high transit costs restrict their urban mobility. Inspired by the utility of Rapido, RydeOn builds a dedicated commute sanctuary—where technical precision meets compassionate female protection on the go.
+              Cities belong to women just as much as anyone else. Yet, safety concerns and high transit costs restrict their urban mobility. Inspired by the utility of Rapido, Rydeon builds a dedicated commute sanctuary—where technical precision meets compassionate female protection on the go.
             </h2>
           </div>
         </div>
@@ -116,7 +116,7 @@ export default function StatsAndMedia() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="text-xl font-extrabold text-white">RydeOn Safety Patrol Video Loop</h4>
+                <h4 className="text-xl font-extrabold text-white">Rydeon Safety Patrol Video Loop</h4>
                 <p className="text-sm font-medium text-brand-yellow-500">"Guiding her secure route checkouts with physical motorcycle details"</p>
               </div>
 

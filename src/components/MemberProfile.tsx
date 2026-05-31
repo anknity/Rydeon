@@ -152,7 +152,7 @@ export default function MemberProfile() {
             </div>
 
             <p className="text-[10px] text-slate-400 leading-normal font-sans">
-              🌟 You earn 10 Safe points for every kilometer commuted using RydeOn EV Scooters or share pooling, which offsets fare commissions directly.
+              🌟 You earn 10 Safe points for every kilometer commuted using Rydeon EV Scooters or share pooling, which offsets fare commissions directly.
             </p>
 
           </div>

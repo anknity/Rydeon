@@ -152,7 +152,7 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
               </div>
               <div>
                 <span className={`${logoTitleSize} font-black text-white tracking-tight transition-all duration-300`}>
-                  Ryde<span className="text-brand-yellow-500">On</span>
+                  Ryde<span className="text-brand-yellow-500">on</span>
                 </span>
                 <span className={`${logoSubtitleSize} font-bold text-slate-300 tracking-wider uppercase transition-all duration-300`}>
                   India's Secure Ride-Hailing
@@ -289,7 +289,7 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
                   <div className="w-8 h-8 rounded-lg bg-brand-yellow-500 flex items-center justify-center">
                     <ShieldCheck className="w-5 h-5 text-brand-navy-900" />
                   </div>
-                  <span className="text-lg font-black text-white">She<span className="text-brand-yellow-500">Ride</span></span>
+                  <span className="text-lg font-black text-white">Ryde<span className="text-brand-yellow-500">on</span></span>
                 </div>
                 <button 
                   onClick={() => setMobileMenuOpen(false)}

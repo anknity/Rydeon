@@ -74,7 +74,7 @@ export default function CaptainPortal() {
             {/* Right side details panel: Yellow theme button, no pink */}
             <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 space-y-6 text-white text-left">
               <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                Earn with RydeOn
+                Earn with Rydeon
               </h2>
               <div className="w-20 h-1.5 bg-brand-yellow-500 rounded-full"></div>
               
@@ -299,7 +299,7 @@ export default function CaptainPortal() {
                         className="rounded border-slate-300 text-brand-navy-900 focus:ring-brand-navy-900 mt-1 cursor-pointer"
                       />
                       <div className="text-xs font-semibold text-slate-600 leading-normal">
-                        I agree to undergo standard RydeOn forensic background validation and safety compliance checks.
+                        I agree to undergo standard Rydeon forensic background validation and safety compliance checks.
                       </div>
                     </label>
                   </div>

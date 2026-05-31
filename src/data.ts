@@ -54,7 +54,7 @@ export const landmarks: PredefinedLandmark[] = [
 export const rideOptions: RideOption[] = [
   {
     id: 'bike',
-    title: 'RydeOn Bike Captain',
+    title: 'Rydeon Bike Captain',
     subtitle: 'Swift, safe, & affordable bike taxi standard',
     description: 'Perfect for quick office & college runs. Led exclusively by verified female or highly vetted pro-safety riders.',
     pricePerKm: 8,
@@ -156,18 +156,18 @@ export const faqs = [
   },
   {
     question: 'Can I choose to only ride with female Captains?',
-    answer: 'Yes, absolutely. In the ride options, our RydeOn Bike and Aura Auto modes connect you primarily with professional female Captains. You can also toggle the "Prefer Verified Female Partner" feature in the app during matching to enforce gender matching.'
+    answer: 'Yes, absolutely. In the ride options, our Rydeon Bike and Aura Auto modes connect you primarily with professional female Captains. You can also toggle the "Prefer Verified Female Partner" feature in the app during matching to enforce gender matching.'
   },
   {
     question: 'What happens if I press the SOS button during a ride?',
     answer: 'Pressing the SOS button instantly: 1) Rings our 24/7 Emergency Command Center, 2) Sends your live coordinate tracking link via SMS to your 5 registered emergency contacts, and 3) Activates an on-screen Safety Agent Audio Call simulator that can call your phone physically to speak with you and de-escalate any situation.'
   },
   {
-    question: 'Is RydeOn available during late-night or early morning hours?',
+    question: 'Is Rydeon available during late-night or early morning hours?',
     answer: 'Yes! We operate 24/7. To empower women who work night or morning-shift jobs (such as health professionals, tech employees, or aviation staff), we have waived all night peak surcharges and integrated prioritized safety patrol units along high-frequency office-metro corridors.'
   },
   {
-    question: 'Can I join as a RydeOn Captain (Rider or Driver)?',
+    question: 'Can I join as a Rydeon Captain (Rider or Driver)?',
     answer: 'Absolutely! We are deeply committed to women\'s financial independence. If you have a valid commercial or non-commercial driving license and a registered vehicle, you can register through our quick Captain application portal on this site. We offer industry-best commissions, flexible timings, and dedicated safety patrol modules for captains.'
   }
 ];

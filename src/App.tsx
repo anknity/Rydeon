@@ -73,7 +73,7 @@ export default function App() {
       {/* Premium safety alert banner styled in high-contrast professional navy/yellow checkmark */}
       <div className="bg-brand-navy-900 text-brand-yellow-500 text-center py-2 px-4 text-xs font-black tracking-wide flex items-center justify-center gap-1.5 z-50 relative shadow-sm border-b border-brand-yellow-500/20">
         <ShieldCheck className="w-4 h-4 fill-brand-yellow-500 text-brand-navy-900 shrink-0 animate-pulse" />
-        <span>RydeOn has deployed physical Safety Patrol Units along key transit loops. Travel confidently around the clock!</span>
+        <span>Rydeon has deployed physical Safety Patrol Units along key transit loops. Travel confidently around the clock!</span>
       </div>
 
       {/* Main navigation header */}
@@ -89,7 +89,7 @@ export default function App() {
           
           <div className="flex items-center gap-2 text-left shrink-0">
             <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse"></span>
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#cbd5e1]">RydeOn secure workflow dashboards:</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#cbd5e1]">Rydeon secure workflow dashboards:</span>
           </div>
 
           <div className="flex bg-brand-navy-950 p-1 rounded-2xl border border-white/5 gap-1 shadow-inner flex-nowrap overflow-x-auto max-w-full">
@@ -141,7 +141,7 @@ export default function App() {
             {/* 4. Google Gemini Safety Chat Companion */}
             <SafetyBuddy />
 
-            {/* 5. "Earn with RydeOn" banner and registration layouts matching image reference 4 */}
+            {/* 5. "Earn with Rydeon" banner and registration layouts matching image reference 4 */}
             <CaptainPortal />
 
             {/* 6. Continuous highlights stats and media operations trailer video cover */}

@@ -4,7 +4,7 @@ export default function WhatWeOffer() {
   const offerings = [
     {
       title: "Quick Pickup",
-      desc: "Pickups within minutes that help you save time on every ride. A RydeOn is always nearby when you need to get moving safely.",
+      desc: "Pickups within minutes that help you save time on every ride. A Rydeon is always nearby when you need to get moving safely.",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&h=400&q=80"
     },
     {

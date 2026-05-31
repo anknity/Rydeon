@@ -349,7 +349,7 @@ export default function BookingWorkspace() {
                     <AlertTriangle className="w-5 h-5 text-red-500 animate-pulse" />
                     <span className="text-xs font-black uppercase tracking-wider">Patrol Intercept Initiated</span>
                   </div>
-                  <p className="text-[10px] text-gray-300">RydeOn Dispatch Unit KA-07 has redirected to your current safe-point. Hold tight, sister.</p>
+                  <p className="text-[10px] text-gray-300">Rydeon Dispatch Unit KA-07 has redirected to your current safe-point. Hold tight, sister.</p>
                 </div>
               ) : null}
 
@@ -416,7 +416,7 @@ export default function BookingWorkspace() {
                 </div>
               ) : (
                 <p className="text-[10px] text-slate-500 text-left font-medium">
-                  Connect microphone to engage RydeOn Acoustic AI verification. Any audio analysis processes entirely client-side for true privacy safeguards.
+                  Connect microphone to engage Rydeon Acoustic AI verification. Any audio analysis processes entirely client-side for true privacy safeguards.
                 </p>
               )}
 
@@ -825,7 +825,7 @@ export default function BookingWorkspace() {
                     <span className="font-extrabold text-xs">Certified safe travel score loaded!</span>
                   </div>
                   <p className="text-[11px] text-slate-600 font-semibold leading-relaxed">
-                    Thank you, sister! Your feedback has been verified and registered directly into our RydeOn Safety Hub databases. You have earned **₹25 Safe Rider Points** cashback!
+                    Thank you, sister! Your feedback has been verified and registered directly into our Rydeon Safety Hub databases. You have earned **₹25 Safe Rider Points** cashback!
                   </p>
                 </div>
               )}

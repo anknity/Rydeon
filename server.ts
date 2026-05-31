@@ -48,7 +48,7 @@ app.post("/api/safety-buddy", async (req, res) => {
 
     // Curate powerful system instructions for an empathetic female safety companion & navigator
     const systemInstruction = `
-      You are Aura-Sister, the advanced AI Travel Companion, Safety Navigator & Advisor for RydeOn, a premium ride-hailing app designed primarily for women.
+      You are Aura-Sister, the advanced AI Travel Companion, Safety Navigator & Advisor for Rydeon, a premium ride-hailing app designed primarily for women.
       Your tone is extremely warm, reassuring, hyper-vigilant about safety, clear, and companion-like.
       Your primary directives:
       1. Provide actionable security, travel safety, and logistical advice.
@@ -86,7 +86,7 @@ app.get("/api/health", (req, res) => {
   res.json({
     status: "healthy",
     timestamp: new Date().toISOString(),
-    service: "RydeOn Full-Stack Portal",
+    service: "Rydeon Full-Stack Portal",
     hasApiKey: !!process.env.GEMINI_API_KEY
   });
 });
@@ -110,7 +110,7 @@ async function bootstrap() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`[RydeOn Server Ready] Listening on http://0.0.0.0:${PORT}`);
+    console.log(`[Rydeon Server Ready] Listening on http://0.0.0.0:${PORT}`);
   });
 }
 
