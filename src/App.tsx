@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import OurServices from './components/OurServices';
 import WhatWeOffer from './components/WhatWeOffer';
+import SafetyEcosystem from './components/SafetyEcosystem';
 import SafetyBuddy from './components/SafetyBuddy';
 import CaptainPortal from './components/CaptainPortal';
 import StatsAndMedia from './components/StatsAndMedia';
@@ -137,6 +138,9 @@ export default function App() {
 
             {/* 3. "What we offer" cards layout matching image reference 3 */}
             <WhatWeOffer />
+
+            {/* 3.5. Premium Interactive Safety & Service Ecosystem (Highlighting all 19+ main specs) */}
+            <SafetyEcosystem />
 
             {/* 4. Google Gemini Safety Chat Companion */}
             <SafetyBuddy />
