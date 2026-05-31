@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-yellow-50: #fefbeb;
+  --color-brand-yellow-100: #fef3c7;
+  --color-brand-yellow-400: #fbbf24;
+  --color-brand-yellow-500: #fdbf15;
+  --color-brand-yellow-600: #d97706;
+  
+  --color-brand-navy-50: #f0f4f9;
+  --color-brand-navy-100: #cbdbe6;
+  --color-brand-navy-600: #1c4680;
+  --color-brand-navy-800: #153a6b;
+  --color-brand-navy-900: #0f2c59;
+  --color-brand-charcoal: #111116;
+  
+  --color-brand-pink-500: #f43f5e;
+  --color-brand-pink-600: #e11d48;
+}
+
+@layer base {
+  body {
+    @apply antialiased font-sans bg-slate-50 text-slate-900;
+  }
+}
+
+/* Custom continuous scrolling animation for marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom ripple animation for active SOS button */
+@keyframes ping-slow {
+  0% { transform: scale(1); opacity: 0.8; }
+  70%, 100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}

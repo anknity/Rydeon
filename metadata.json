@@ -1,0 +1,6 @@
+{
+  "name": "RydeOn",
+  "description": "Secure, reliable, and premium bike taxi and Cab booking tailored for women.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
