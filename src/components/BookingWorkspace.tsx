@@ -474,23 +474,29 @@ export default function BookingWorkspace() {
 
               {/* Selection of Category */}
               <div>
-                <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2.5">Choose secure Transit Vehicle</span>
-                <div className="grid grid-cols-3 gap-3">
+                <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-3 text-center sm:text-left">Choose secure Transit Vehicle</span>
+                <div className="grid grid-cols-3 gap-4">
                   {rideOptions.map(opt => {
                     const isSelected = rideMode === opt.id;
+                    const emoji = opt.id === 'bike' ? '🏍️' : opt.id === 'auto' ? '🛺' : '🚗';
+                    const name = opt.id === 'bike' ? 'Bike' : opt.id === 'auto' ? 'Auto' : 'Cab';
                     return (
                       <button
                         key={`sel-${opt.id}`}
                         onClick={() => setRideMode(opt.id)}
-                        className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
+                        className={`py-5 px-4 rounded-2xl border text-center transition-all cursor-pointer flex flex-col items-center justify-center gap-1 shadow-sm ${
                           isSelected 
-                            ? 'bg-brand-navy-900 text-white border-brand-navy-900 shadow-md' 
-                            : 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-700'
+                            ? 'bg-brand-navy-900 text-white border-brand-navy-900 shadow-md transform scale-[1.02]' 
+                            : 'bg-white hover:bg-slate-50 border-slate-200 text-slate-700'
                         }`}
                       >
-                        <span className="block font-black text-xs">{opt.id === 'bike' ? '🏍️ E-Bike Shield' : opt.id === 'auto' ? '🛺 Rickshaw Auto' : '🚗 Guard EV Cab'}</span>
-                        <span className="block font-semibold text-[10px] opacity-80 mt-1">₹{opt.pricePerKm}/km base</span>
-                        <span className="block text-[9px] opacity-60 leading-normal mt-0.5">{opt.etaMinutes} mins away</span>
+                        <span className="flex items-center justify-center gap-1.5 font-extrabold text-sm sm:text-base">
+                          <span>{emoji}</span>
+                          <span>{name}</span>
+                        </span>
+                        <span className={`block text-xs sm:text-sm font-bold opacity-90 ${isSelected ? 'text-brand-yellow-400' : 'text-slate-500'}`}>
+                          ₹{opt.pricePerKm}/km
+                        </span>
                       </button>
                     );
                   })}

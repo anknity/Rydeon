@@ -215,7 +215,7 @@ export default function SafetyCommand() {
             </div>
 
             {/* Corridors Table list */}
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto no-scrollbar">
               <table className="w-full text-left border-collapse font-sans">
                 <thead>
                   <tr className="border-b border-slate-100 text-[10px] font-black text-slate-400 uppercase tracking-widest">

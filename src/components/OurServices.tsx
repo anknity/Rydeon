@@ -6,19 +6,19 @@ export default function OurServices() {
     {
       title: "Bike-Taxi",
       subtitle: "Beat traffic, ride quicker",
-      icon: <Bike className="w-8 h-8 text-brand-navy-800" />,
+      icon: <span className="text-4xl select-none leading-none">🏍️</span>,
       bg: "bg-amber-50/50"
     },
     {
       title: "Auto",
       subtitle: "Everyday autos, made easy",
-      icon: <Sparkles className="w-8 h-8 text-brand-navy-800" />,
+      icon: <span className="text-4xl select-none leading-none">🛺</span>,
       bg: "bg-amber-50/50"
     },
     {
       title: "Cab",
       subtitle: "Comfort for every journey",
-      icon: <Car className="w-8 h-8 text-brand-navy-800" />,
+      icon: <span className="text-4xl select-none leading-none">🚗</span>,
       bg: "bg-amber-50/50"
     },
     {

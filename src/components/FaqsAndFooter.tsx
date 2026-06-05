@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import { ChevronDown, Plus, Mail, ArrowRight, ShieldCheck, Instagram, Linkedin, Heart, Check, Info } from 'lucide-react';
+import { ChevronDown, Plus, Mail, ArrowRight, ShieldCheck, Instagram, Linkedin, Heart, Check, Info, LayoutGrid, Map, ShieldAlert, UserCheck } from 'lucide-react';
 import { faqs } from '../data';
 
-export default function FaqsAndFooter() {
+interface FaqsAndFooterProps {
+  currentView?: 'home' | 'booking' | 'safety' | 'profile';
+  onViewChange?: (view: 'home' | 'booking' | 'safety' | 'profile') => void;
+}
+
+export default function FaqsAndFooter({ currentView, onViewChange }: FaqsAndFooterProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [emailValue, setEmailValue] = useState('');
   const [newsSubmitted, setNewsSubmitted] = useState(false);
@@ -137,6 +142,46 @@ export default function FaqsAndFooter() {
             </div>
           </div>
         </div>
+
+        {/* Dynamic Sub-Console View Switcher inside Footer */}
+        {currentView && onViewChange && (
+          <div className="bg-brand-navy-900 rounded-3xl border border-brand-yellow-500/15 py-5 px-6 sm:px-8 shadow-xl mb-16 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2.5 text-left shrink-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="text-xs font-black uppercase tracking-widest text-[#94a3b8]">Rydeon secure dashboards:</span>
+            </div>
+
+            <div className="flex bg-brand-navy-950 p-1.5 rounded-2xl border border-white/5 gap-1.5 shadow-inner flex-wrap justify-center sm:flex-nowrap max-w-full overflow-x-auto no-scrollbar">
+              {[
+                { id: 'home', label: '🏠 Explorer Home', icon: LayoutGrid },
+                { id: 'booking', label: '🗺️ Booking Console', icon: Map },
+                { id: 'safety', label: '🛡️ Safety Patrol Desks', icon: ShieldAlert },
+                { id: 'profile', label: '👤 Member Passport', icon: UserCheck }
+              ].map(tab => {
+                const Icon = tab.icon;
+                const isSelected = currentView === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => {
+                      onViewChange(tab.id as any);
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-all uppercase whitespace-nowrap cursor-pointer ${
+                      isSelected 
+                        ? 'bg-brand-yellow-500 text-brand-navy-900 font-extrabold shadow-md transform scale-[1.02]' 
+                        : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    }`}
+                    id={`footer-app-view-pill-${tab.id}`}
+                  >
+                    <Icon className="w-4 h-4 shrink-0" />
+                    <span>{tab.label.split(' ').slice(1).join(' ')}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         {/* Elegant Footer block */}
         <footer className="pt-16 border-t border-slate-100 grid grid-cols-1 md:grid-cols-12 gap-12 items-start text-left">

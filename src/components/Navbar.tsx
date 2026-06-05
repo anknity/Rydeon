@@ -11,16 +11,8 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Initialize header size mode from localStorage or defaulted to balanced 'm'
-  const [headerSize, setHeaderSize] = useState<'s' | 'm' | 'l'>(() => {
-    const saved = localStorage.getItem('rydeon-header-size');
-    return (saved as 's' | 'm' | 'l') || 'm';
-  });
-
-  const changeHeaderSize = (size: 's' | 'm' | 'l') => {
-    setHeaderSize(size);
-    localStorage.setItem('rydeon-header-size', size);
-  };
+  // Layout size statically set to balanced 'm'
+  const headerSize = 'm';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -183,54 +175,8 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
           </div>
 
           {/* Right actions */}
-          <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 transition-all duration-300 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 transition-all duration-300 shrink-0 font-semibold">
             
-            {/* Sizing Controller Capsule (Custom Sizing Prompt Solution) */}
-            <div className="flex items-center bg-brand-navy-800/80 border border-white/10 rounded-full p-0.5 shrink-0" id="header-scale-controller-container">
-              <button 
-                onClick={() => changeHeaderSize('s')}
-                className={`flex items-center justify-center rounded-full text-[10px] font-black transition-all duration-200 cursor-pointer ${
-                  headerSize === 's' 
-                    ? 'bg-brand-yellow-500 text-brand-navy-900 font-black shadow-md' 
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                } ${
-                  headerSize === 's' ? 'w-6.5 h-6.5' : 'w-5.5 h-5.5'
-                }`}
-                title="Compact Size Layout"
-                id="header-scale-s"
-              >
-                A-
-              </button>
-              <button 
-                onClick={() => changeHeaderSize('m')}
-                className={`flex items-center justify-center rounded-full text-[10px] font-black transition-all duration-200 cursor-pointer ${
-                  headerSize === 'm' 
-                    ? 'bg-brand-yellow-500 text-brand-navy-900 font-extrabold shadow-md' 
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                } ${
-                  headerSize === 'm' ? 'w-6.5 h-6.5' : 'w-5.5 h-5.5'
-                }`}
-                title="Standard Balanced Layout"
-                id="header-scale-m"
-              >
-                A
-              </button>
-              <button 
-                onClick={() => changeHeaderSize('l')}
-                className={`flex items-center justify-center rounded-full text-[10px] font-black transition-all duration-200 cursor-pointer ${
-                  headerSize === 'l' 
-                    ? 'bg-brand-yellow-500 text-brand-navy-900 font-black shadow-md' 
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                } ${
-                  headerSize === 'l' ? 'w-6.5 h-6.5' : 'w-5.5 h-5.5'
-                }`}
-                title="Spacious Elegant Layout"
-                id="header-scale-l"
-              >
-                A+
-              </button>
-            </div>
-
             {/* Quick Emergency Hotline Call */}
             <a 
               href="tel:1091" 
@@ -323,31 +269,6 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
 
             {/* Emergency Info Box inside drawer */}
             <div className="pt-6 border-t border-white/10 space-y-4">
-              {/* Scale Control inside Mobile menu */}
-              <div className="p-3 bg-slate-800/40 rounded-xl border border-white/5 space-y-1.5">
-                <span className="text-[9.5px] font-black text-brand-yellow-400 uppercase tracking-widest block text-center">Header Density</span>
-                <div className="flex items-center justify-between p-0.5 bg-slate-950 rounded-lg" id="mobile-scale-controller">
-                  <button 
-                    onClick={() => changeHeaderSize('s')}
-                    className={`flex-grow py-1.5 rounded text-[10.5px] font-extrabold transition-all text-center ${headerSize === 's' ? 'bg-brand-yellow-500 text-brand-navy-900' : 'text-gray-400'}`}
-                  >
-                    Mini
-                  </button>
-                  <button 
-                    onClick={() => changeHeaderSize('m')}
-                    className={`flex-grow py-1.5 rounded text-[10.5px] font-extrabold transition-all text-center ${headerSize === 'm' ? 'bg-brand-yellow-500 text-brand-navy-900' : 'text-gray-400'}`}
-                  >
-                    Standard
-                  </button>
-                  <button 
-                    onClick={() => changeHeaderSize('l')}
-                    className={`flex-grow py-1.5 rounded text-[10.5px] font-extrabold transition-all text-center ${headerSize === 'l' ? 'bg-brand-yellow-500 text-brand-navy-900' : 'text-gray-400'}`}
-                  >
-                    Cozy
-                  </button>
-                </div>
-              </div>
-
               <a 
                 href="tel:1091" 
                 className="flex items-center justify-center gap-3 bg-red-950/50 hover:bg-red-900/70 border border-red-500/30 text-red-400 py-3.5 px-4 rounded-xl font-bold"
