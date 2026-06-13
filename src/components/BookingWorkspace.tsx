@@ -388,7 +388,11 @@ export default function BookingWorkspace() {
                 </button>
               </div>
 
-              {mIdValue(micError)}
+              {micError && (
+                <div className="p-2.5 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-[10px] font-bold rounded-xl text-center">
+                  ⚠️ {micError}
+                </div>
+              )}
 
               {audioMeterActive ? (
                 <div className="space-y-2 animate-fade-in">

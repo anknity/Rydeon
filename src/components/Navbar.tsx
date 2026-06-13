@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { PhoneCall, ShieldCheck, Menu, X, ShieldAlert } from 'lucide-react';
+import { PhoneCall, ShieldCheck, Menu, X, ShieldAlert, User } from 'lucide-react';
 
 interface NavbarProps {
   onTabChange: (tab: string) => void;
@@ -26,7 +26,7 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
     { id: 'home', label: 'Home' },
     { id: 'services', label: 'Our Services' },
     { id: 'features', label: 'What We Offer' },
-    { id: 'safety', label: 'Safety-Buddy' },
+    { id: 'safety', label: 'Safety Patrol' },
     { id: 'captain', label: 'Earn with Us' },
     { id: 'faq', label: 'FAQs' }
   ];
@@ -34,14 +34,7 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
   const handleNavClick = (id: string) => {
     onTabChange(id);
     setMobileMenuOpen(false);
-    
-    // Smooth scroll to element
-    const element = document.getElementById(`${id}-section`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Compute sizing attributes using headerSize variables
@@ -127,34 +120,27 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
     <>
       <header className={`sticky top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? `bg-brand-navy-900 border-b border-brand-yellow-500/20 shadow-lg backdrop-blur-md ${headerPaddingScrolled}` 
-          : `bg-brand-navy-900/90 border-b border-transparent ${headerPaddingInitial}`
+          ? 'bg-white border-b border-slate-100 shadow-md py-3' 
+          : 'bg-white border-b border-transparent py-4'
       }`}>
-        <nav className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300 ${navContainerGapOuter}`}>
-          {/* Logo */}
-          <div className="flex items-center gap-2 shrink-0">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between transition-all duration-300">
+          
+          {/* Rapido style Logo Capsule */}
+          <div className="flex items-center shrink-0">
             <a 
               href="#" 
               onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} 
-              className="flex items-center gap-1.5 group"
+              className="flex items-center group"
               id="navbar-logo"
             >
-              <div className={`${logoBoxSize} bg-brand-yellow-500 flex items-center justify-center shadow-md shadow-brand-yellow-500/20 group-hover:scale-105 transition-all duration-300`}>
-                <ShieldCheck className={`${logoIconSize} text-brand-navy-900 transition-all duration-300`} />
-              </div>
-              <div>
-                <span className={`${logoTitleSize} font-black text-white tracking-tight transition-all duration-300`}>
-                  Ryde<span className="text-brand-yellow-500">on</span>
-                </span>
-                <span className={`${logoSubtitleSize} font-bold text-slate-300 tracking-wider uppercase transition-all duration-300`}>
-                  India's Secure Ride-Hailing
-                </span>
+              <div className="bg-brand-yellow-500 hover:bg-[#fbcf25] text-[#111116] font-black text-xl sm:text-2xl px-6 py-2.5 rounded-full tracking-tighter flex items-center justify-center shadow-sm select-none transition-all duration-200 hover:scale-[1.02]">
+                rydeon
               </div>
             </a>
           </div>
 
-          {/* Desktop Nav Items */}
-          <div className={`hidden lg:flex items-center ${navItemsBgGap} bg-brand-navy-800 p-0.5 rounded-full border border-white/5 transition-all duration-300`}>
+          {/* Desktop Nav Items - Clean, Title-Case, Centered with Bottom Indicator */}
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 font-semibold select-none">
             {menuItems.map((item) => {
               const isActive = activeTab === item.id;
               return (
@@ -162,53 +148,44 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
                   key={item.id}
                   id={`nav-item-${item.id}`}
                   onClick={() => handleNavClick(item.id)}
-                  className={`rounded-full font-bold tracking-wide transition-all duration-200 ${navItemPadding} ${
+                  className={`relative py-1 text-sm font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
                     isActive
-                      ? 'bg-brand-yellow-500 text-brand-navy-900 shadow-md shadow-brand-yellow-500/10'
-                      : 'text-gray-300 hover:text-white hover:bg-white/5'
+                      ? 'text-[#111116] font-extrabold'
+                      : 'text-slate-600 hover:text-[#111116]'
                   }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {isActive && (
+                    <span className="absolute left-0 right-0 bottom-[-4px] h-[3px] bg-[#111116] rounded-full animate-fade-in" />
+                  )}
                 </button>
               );
             })}
           </div>
 
           {/* Right actions */}
-          <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3 transition-all duration-300 shrink-0 font-semibold">
+          <div className="flex items-center gap-2 sm:gap-3 transition-all duration-300 shrink-0 font-semibold">
             
-            {/* Quick Emergency Hotline Call */}
-            <a 
-              href="tel:1091" 
-              className={`hidden sm:flex items-center gap-1.5 bg-red-950/40 hover:bg-red-900/60 text-red-500 hover:text-white rounded-full border border-red-500/30 transition-all duration-300 font-bold group shrink-0 ${sosBtnPadding}`}
-              title="Speak to Emergency Women Helpline immediately"
-              id="nav-sos-call"
-            >
-              <PhoneCall className={`${sosIconSize} text-red-500 group-hover:animate-bounce transition-all`} />
-              <span className="hidden xl:inline">SOS Help: 1091</span>
-              <span className="xl:hidden">SOS: 1091</span>
-            </a>
-
-            {/* Quick ride click */}
+            {/* Black capsule ride Booking Button mirroring "Download App" from reference */}
             <button 
               onClick={() => {
                 if (onOpenBookingConsole) {
                   onOpenBookingConsole();
                 } else {
-                  handleNavClick('home');
+                  handleNavClick('booking');
                 }
               }}
-              className={`bg-brand-yellow-500 hover:bg-brand-yellow-600 text-brand-navy-900 rounded-full font-black transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-1.5 shrink-0 ${bookBtnPadding}`}
+              className="bg-[#111116] hover:bg-zinc-800 text-white rounded-full font-extrabold transition-all hover:scale-105 active:scale-95 px-5 py-2.5 text-xs sm:text-sm flex items-center justify-center gap-1.5 shrink-0 shadow-lg shadow-black/10 cursor-pointer"
               id="nav-book-ride-btn"
             >
-              <ShieldAlert className={`${bookIconSize} transition-all`} />
+              <ShieldAlert className="w-4 h-4 text-brand-yellow-500" />
               <span>Book Ride</span>
             </button>
 
-            {/* Mobile menu toggle */}
+            {/* Mobile menu toggle with dark lines on clear white background */}
             <button 
               onClick={() => setMobileMenuOpen(true)}
-              className="lg:hidden p-1 text-white hover:text-brand-yellow-500 hover:bg-white/5 rounded-full transition-colors shrink-0"
+              className="lg:hidden p-1.5 text-[#111116] hover:bg-slate-50 rounded-full transition-colors shrink-0 cursor-pointer"
               aria-label="Open navigation menu"
               id="mobile-menu-btn"
             >
@@ -223,23 +200,22 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
         <div className="fixed inset-0 z-50 lg:hidden" id="mobile-menu-panel">
           {/* Backdrop overlay */}
           <div 
-            className="fixed inset-0 bg-brand-navy-900/80 backdrop-blur-md transition-opacity"
+            className="fixed inset-0 bg-[#111116]/50 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileMenuOpen(false)}
           ></div>
 
-          {/* Sidebar Drawer */}
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-brand-navy-900 border-l border-white/5 p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 ease-out">
+          {/* Sidebar Drawer styled matching the light corporate themes */}
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white border-l border-slate-150 p-6 flex flex-col justify-between shadow-2xl transition-transform duration-300 ease-out">
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-white/10">
+              <div className="flex items-center justify-between pb-5 border-b border-slate-100">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-brand-yellow-500 flex items-center justify-center">
-                    <ShieldCheck className="w-5 h-5 text-brand-navy-900" />
+                  <div className="bg-brand-yellow-500 text-black font-black text-base px-4 py-1.5 rounded-full select-none">
+                    rydeon
                   </div>
-                  <span className="text-lg font-black text-white">Ryde<span className="text-brand-yellow-500">on</span></span>
                 </div>
                 <button 
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-1 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+                  className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full transition-colors"
                   id="mobile-menu-close-btn"
                 >
                   <X className="w-6 h-6" />
@@ -247,41 +223,54 @@ export default function Navbar({ onTabChange, activeTab, onOpenBookingConsole }:
               </div>
 
               {/* Navigation links inside drawer */}
-              <nav className="flex flex-col gap-3 py-8">
+              <nav className="flex flex-col gap-1.5 py-6">
                 {menuItems.map((item) => {
                   const isActive = activeTab === item.id;
                   return (
                     <button
                       key={item.id}
                       onClick={() => handleNavClick(item.id)}
-                      className={`w-full text-left px-4 py-3 rounded-xl text-base font-bold tracking-wide transition-all ${
+                      className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold tracking-wide transition-all ${
                         isActive
-                          ? 'bg-brand-yellow-500 text-brand-navy-900'
-                          : 'text-gray-300 hover:text-white hover:bg-white/5'
+                          ? 'bg-brand-yellow-500 text-brand-navy-900 shadow-md'
+                          : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                       }`}
                     >
                       {item.label}
                     </button>
                   );
                 })}
+                
+                {/* Mobile direct profile passport */}
+                <button
+                  onClick={() => handleNavClick('profile')}
+                  className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-bold tracking-wide transition-all mt-2 flex items-center gap-2 ${
+                    activeTab === 'profile'
+                      ? 'bg-brand-yellow-500 text-brand-navy-900 shadow-md'
+                      : 'text-brand-yellow-600 bg-brand-yellow-500/10 hover:bg-brand-yellow-500/20'
+                  }`}
+                >
+                  <User className="w-4 h-4" />
+                  <span>Rider Passport Profile</span>
+                </button>
               </nav>
             </div>
 
             {/* Emergency Info Box inside drawer */}
-            <div className="pt-6 border-t border-white/10 space-y-4">
+            <div className="pt-6 border-t border-slate-100 space-y-4">
               <a 
                 href="tel:1091" 
-                className="flex items-center justify-center gap-3 bg-red-950/50 hover:bg-red-900/70 border border-red-500/30 text-red-400 py-3.5 px-4 rounded-xl font-bold"
+                className="flex items-center justify-center gap-3 bg-red-50 hover:bg-red-100 border border-red-200 text-red-600 py-3.5 px-4 rounded-xl font-bold"
                 id="mobile-drawer-sos-call"
               >
-                <PhoneCall className="w-5 h-5" />
+                <PhoneCall className="w-5 h-5 text-red-500" />
                 <div className="text-left">
-                  <div className="text-[10px] uppercase tracking-widest font-bold -mb-0.5">National Helpdesk</div>
-                  <div className="text-sm font-extrabold">Emergency Ring: 1091</div>
+                  <div className="text-[10px] uppercase tracking-widest font-extrabold -mb-0.5">Women Support Hub</div>
+                  <div className="text-sm font-black">Call Helpline: 1091</div>
                 </div>
               </a>
-              <p className="text-center text-[10px] text-gray-400 font-medium font-semibold">
-                Our command centre operates 24/7/365 to track every rider.
+              <p className="text-center text-[10px] text-slate-400 font-semibold leading-normal">
+                Our active defense command track operates 24/7/365.
               </p>
             </div>
           </div>

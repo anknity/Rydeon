@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronDown, Plus, Mail, ArrowRight, ShieldCheck, Instagram, Linkedin, Heart, Check, Info, LayoutGrid, Map, ShieldAlert, UserCheck } from 'lucide-react';
+import { ChevronDown, Plus, Mail, ArrowRight, ShieldCheck, Instagram, Linkedin, Heart, Check, Info } from 'lucide-react';
 import { faqs } from '../data';
 
 interface FaqsAndFooterProps {
-  currentView?: 'home' | 'booking' | 'safety' | 'profile';
-  onViewChange?: (view: 'home' | 'booking' | 'safety' | 'profile') => void;
+  currentView?: string;
+  onViewChange?: (view: any) => void;
 }
 
 export default function FaqsAndFooter({ currentView, onViewChange }: FaqsAndFooterProps) {
@@ -26,69 +26,71 @@ export default function FaqsAndFooter({ currentView, onViewChange }: FaqsAndFoot
   };
 
   return (
-    <section className="bg-white pt-24 pb-12" id="faq-section">
+    <section className="bg-white pt-16 pb-12" id="faq-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* FAQ layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start">
-          <div className="lg:col-span-4 space-y-6">
-            <div className="inline-block bg-brand-yellow-500/10 text-brand-navy-900 border border-brand-yellow-500/30 px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
-              Common Inquiries
+        {/* FAQ layout - displayed ONLY on the FAQ page tab view for a cohesive and clean experience */}
+        {currentView === 'faq' && (
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24 items-start animate-fade-in">
+            <div className="lg:col-span-4 space-y-6">
+              <div className="inline-block bg-brand-yellow-500/10 text-brand-navy-900 border border-brand-yellow-500/30 px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
+                Common Inquiries
+              </div>
+              
+              <h2 className="text-3xl sm:text-5xl font-extrabold text-[#111116] tracking-tight leading-tight">
+                Safety Curiosities & Guidelines
+              </h2>
+              <p className="text-slate-500 font-semibold text-sm leading-relaxed">
+                Find answers regarding pilot background clearances, late-night booking procedures, SOS alarm response times, and vehicle specifications.
+              </p>
+
+              <a 
+                href="mailto:support@rydeon.safe" 
+                className="inline-flex items-center gap-2 bg-brand-navy-900 hover:bg-brand-navy-800 text-brand-yellow-500 py-3.5 px-6 rounded-full font-black text-xs uppercase tracking-wider transition-all hover:scale-103 active:scale-97 shadow-md cursor-pointer"
+                id="faq-support-btn"
+              >
+                <span>Speak to Support</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
-            
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#111116] tracking-tight leading-tight">
-              Safety Curiosities & Guidelines
-            </h2>
-            <p className="text-slate-500 font-semibold text-sm leading-relaxed">
-              Find answers regarding pilot background clearances, late-night booking procedures, SOS alarm response times, and vehicle specifications.
-            </p>
 
-            <a 
-              href="mailto:support@rydeon.safe" 
-              className="inline-flex items-center gap-2 bg-brand-navy-900 hover:bg-brand-navy-800 text-brand-yellow-500 py-3.5 px-6 rounded-full font-black text-xs uppercase tracking-wider transition-all hover:scale-103 active:scale-97 shadow-md cursor-pointer"
-              id="faq-support-btn"
-            >
-              <span>Speak to Support</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          <div className="lg:col-span-8 space-y-4">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
-              return (
-                <div 
-                  key={`faq-${index}`} 
-                  className={`border border-slate-200/80 rounded-2xl overflow-hidden transition-all ${
-                    isOpen ? 'bg-amber-50/10 border-brand-yellow-500/30' : 'bg-slate-50 hover:bg-slate-100/50'
-                  }`}
-                >
-                  <button
-                    onClick={() => toggleFaq(index)}
-                    className="w-full flex items-center justify-between p-5 text-left transition-colors focus:outline-none cursor-pointer"
-                    id={`faq-btn-${index}`}
+            <div className="lg:col-span-8 space-y-4">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaq === index;
+                return (
+                  <div 
+                    key={`faq-${index}`} 
+                    className={`border border-slate-200/80 rounded-2xl overflow-hidden transition-all ${
+                      isOpen ? 'bg-amber-50/10 border-brand-yellow-500/30' : 'bg-slate-50 hover:bg-slate-100/50'
+                    }`}
                   >
-                    <span className="font-extrabold text-sm sm:text-base text-[#111116] pr-4">
-                      {faq.question}
-                    </span>
-                    <div className={`w-9 h-9 border border-slate-200 rounded-xl bg-white flex items-center justify-center shrink-0 transition-transform ${
-                      isOpen ? 'rotate-180 border-brand-yellow-500/30 text-brand-yellow-600' : 'text-slate-500'
-                    }`}>
-                      <ChevronDown className="w-4.5 h-4.5" />
-                    </div>
-                  </button>
-                  
-                  {/* Accordion body panels */}
-                  {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-slate-650 text-xs sm:text-sm font-semibold leading-relaxed border-t border-slate-100">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex items-center justify-between p-5 text-left transition-colors focus:outline-none cursor-pointer"
+                      id={`faq-btn-${index}`}
+                    >
+                      <span className="font-extrabold text-sm sm:text-base text-[#111116] pr-4">
+                        {faq.question}
+                      </span>
+                      <div className={`w-9 h-9 border border-slate-200 rounded-xl bg-white flex items-center justify-center shrink-0 transition-transform ${
+                        isOpen ? 'rotate-180 border-brand-yellow-500/30 text-brand-yellow-600' : 'text-slate-500'
+                      }`}>
+                        <ChevronDown className="w-4.5 h-4.5" />
+                      </div>
+                    </button>
+                    
+                    {/* Accordion body panels */}
+                    {isOpen && (
+                      <div className="px-5 pb-5 pt-1 text-slate-650 text-xs sm:text-sm font-semibold leading-relaxed border-t border-slate-100">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* CTA newsletter box */}
         <div className="bg-brand-navy-900 rounded-[32px] p-8 sm:p-16 relative overflow-hidden text-center lg:text-left border border-white/5 shadow-xl select-none mb-16">
@@ -142,47 +144,6 @@ export default function FaqsAndFooter({ currentView, onViewChange }: FaqsAndFoot
             </div>
           </div>
         </div>
-
-        {/* Dynamic Sub-Console View Switcher inside Footer */}
-        {currentView && onViewChange && (
-          <div className="bg-brand-navy-900 rounded-3xl border border-brand-yellow-500/15 py-5 px-6 sm:px-8 shadow-xl mb-16 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2.5 text-left shrink-0">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="text-xs font-black uppercase tracking-widest text-[#94a3b8]">Rydeon secure dashboards:</span>
-            </div>
-
-            <div className="flex bg-brand-navy-950 p-1.5 rounded-2xl border border-white/5 gap-1.5 shadow-inner flex-wrap justify-center sm:flex-nowrap max-w-full overflow-x-auto no-scrollbar">
-              {[
-                { id: 'home', label: '🏠 Explorer Home', icon: LayoutGrid },
-                { id: 'booking', label: '🗺️ Booking Console', icon: Map },
-                { id: 'safety', label: '🛡️ Safety Patrol Desks', icon: ShieldAlert },
-                { id: 'profile', label: '👤 Member Passport', icon: UserCheck }
-              ].map(tab => {
-                const Icon = tab.icon;
-                const isSelected = currentView === tab.id;
-                return (
-                  <button
-                    key={tab.id}
-                    onClick={() => {
-                      onViewChange(tab.id as any);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide transition-all uppercase whitespace-nowrap cursor-pointer ${
-                      isSelected 
-                        ? 'bg-brand-yellow-500 text-brand-navy-900 font-extrabold shadow-md transform scale-[1.02]' 
-                        : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
-                    id={`footer-app-view-pill-${tab.id}`}
-                  >
-                    <Icon className="w-4 h-4 shrink-0" />
-                    <span>{tab.label.split(' ').slice(1).join(' ')}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
         {/* Elegant Footer block */}
         <footer className="pt-16 border-t border-slate-100 grid grid-cols-1 md:grid-cols-12 gap-12 items-start text-left">
           <div className="md:col-span-4 space-y-6">
