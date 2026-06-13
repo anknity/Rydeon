@@ -497,55 +497,51 @@ export default function Hero() {
 
           </div>
 
-          {/* RIGHT COLUMN: Crescent Mask illustrations matching Rapido reference exactly */}
+          {/* RIGHT COLUMN: Arch mask enclosing a beautiful premium bike and taxi service image with sleek floating tags */}
           <div className="lg:col-span-6 relative flex justify-center lg:justify-end">
             
             {/* Elegant organic arched dome layout mimicking Rapido's mascot presentation cutout */}
-            <div className="relative w-full max-w-[500px] aspect-[4/3] sm:aspect-square bg-slate-50 rounded-[48px] sm:rounded-b-[200px] sm:rounded-t-[200px] flex items-center justify-center overflow-hidden border border-slate-150 shadow-md">
+            <div className="relative w-full max-w-[480px] aspect-square bg-[#f8fafc] rounded-[48px] sm:rounded-b-[240px] sm:rounded-t-[240px] flex items-center justify-center overflow-hidden border border-slate-150 shadow-lg group">
               
-              {/* Background Skyscrapers cityscape stylized vector silhouette */}
-              <div className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-multiply" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1542451313-a11c0ee151b1?auto=format&fit=crop&w=800&q=80')` }}></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-100/90 via-transparent to-transparent"></div>
+              {/* High-quality vibrant urban scooter-commuting background image */}
+              <img 
+                src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1000&q=80"
+                alt="City Bike Taxi Commute" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                referrerPolicy="no-referrer"
+              />
+              
+              {/* Soft dark-gradient overlay for elegant professional high contrast */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
 
-              {/* Composite of scooter, auto and cab lined up beautifully running dynamic street-way */}
-              <div className="relative z-10 w-full h-full flex flex-col justify-end p-8 pb-12 space-y-4">
+              {/* Outside live indicator tag */}
+              <div className="absolute top-6 left-6 flex justify-between items-center bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 shadow-sm transition-transform duration-300 group-hover:translate-x-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-2"></span>
+                <span className="text-[10px] uppercase font-black text-slate-900 tracking-wider">⚡ 12,400+ Active Captains Online</span>
+              </div>
+
+              {/* Dynamic Interactive Float Badges (Aesthetic overlays) */}
+              <div className="absolute inset-x-6 bottom-8 space-y-3 z-10">
                 
-                {/* Visual title inside the graphic */}
-                <div className="absolute top-6 left-6 right-6 flex justify-between items-center bg-white/70 backdrop-blur-sm p-3 rounded-full border border-white/40 shadow-sm">
-                  <span className="text-[10px] uppercase font-black text-slate-900 tracking-wider">⚡ rydeon live defense fleet</span>
-                  <span className="bg-brand-yellow-400 text-slate-950 text-[9px] font-extrabold px-2 py-0.5 rounded-full select-none">Vetted Pilots</span>
-                </div>
-
-                {/* Scooter Row Card */}
-                <div className="flex items-center gap-4 bg-white hover:bg-slate-50 transition-all duration-300 p-3.5 rounded-2xl shadow-md border border-slate-100 transform hover:-translate-y-1 hover:shadow-lg group">
-                  <div className="w-14 h-14 rounded-xl bg-brand-yellow-500 flex items-center justify-center text-3xl font-bold shadow-inner select-none transition-transform group-hover:scale-105">
+                {/* Bike-Taxi Card Accent */}
+                <div className="bg-white/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/40 shadow-lg flex items-center gap-3.5 transform transition-transform duration-300 group-hover:-translate-y-1">
+                  <div className="w-12 h-12 rounded-xl bg-brand-yellow-500 text-slate-900 flex items-center justify-center text-2xl shadow-inner select-none">
                     🛵
                   </div>
                   <div className="text-left">
-                    <span className="block font-black text-sm text-[#111116]">Specialized Bike Taxis</span>
-                    <span className="text-xs text-slate-500 block font-semibold mt-0.5">Quick & convenient solo travel equipped with smart defense cameras.</span>
+                    <span className="block font-black text-xs text-[#111116] uppercase tracking-wide">Bike-Taxi Service</span>
+                    <span className="text-[11px] text-slate-600 block font-medium mt-0.5">Beat city traffic instantly with vetted local pilots.</span>
                   </div>
                 </div>
 
-                {/* Rickshaw Row Card */}
-                <div className="flex items-center gap-4 bg-white hover:bg-slate-50 transition-all duration-300 p-3.5 rounded-2xl shadow-md border border-slate-100 transform hover:-translate-y-1 hover:shadow-lg group">
-                  <div className="w-14 h-14 rounded-xl bg-emerald-500 flex items-center justify-center text-3xl font-bold shadow-inner select-none transition-transform group-hover:scale-105 font-sans">
-                    🛺
-                  </div>
-                  <div className="text-left font-sans">
-                    <span className="block font-black text-sm text-[#111116]">Protective SafeCover Autos</span>
-                    <span className="text-xs text-slate-500 block font-semibold mt-0.5">Physical driver enclosures with direct cloud command center panic logs.</span>
-                  </div>
-                </div>
-
-                {/* Cab Row Card */}
-                <div className="flex items-center gap-4 bg-white hover:bg-slate-50 transition-all duration-300 p-3.5 rounded-2xl shadow-md border border-slate-100 transform hover:-translate-y-1 hover:shadow-lg group">
-                  <div className="w-14 h-14 rounded-xl bg-slate-900 text-white flex items-center justify-center text-3xl font-bold shadow-inner select-none transition-transform group-hover:scale-105 font-sans">
+                {/* Premium Cab Card Accent */}
+                <div className="bg-white/95 backdrop-blur-md p-3.5 rounded-2xl border border-white/40 shadow-lg flex items-center gap-3.5 transform transition-transform duration-300 group-hover:-translate-y-1">
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 text-white flex items-center justify-center text-2xl shadow-inner select-none">
                     🚗
                   </div>
-                  <div className="text-left font-sans">
-                    <span className="block font-black text-sm text-[#111116]">Premium SafeGuard Cabs</span>
-                    <span className="text-xs text-slate-500 block font-semibold mt-0.5">Double-screen secure partition panels with constant real-time telemetry.</span>
+                  <div className="text-left">
+                    <span className="block font-black text-xs text-[#111116] uppercase tracking-wide">Premium Cabs</span>
+                    <span className="text-[11px] text-slate-600 block font-medium mt-0.5">Quiet, comfortable travel with dual-screen partition walls.</span>
                   </div>
                 </div>
 

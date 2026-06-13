@@ -53,8 +53,8 @@ export default function CaptainPortal() {
   };
 
   return (
-    <section className="py-20 bg-[#fafafa]" id="captain-section">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 bg-transparent" id="captain-section">
+      <div className="max-w-7xl mx-auto">
         
         {/* IMPACT BANNER INSPIRATION FROM IMAGE 4 */}
         <div className="bg-brand-navy-900 rounded-3xl overflow-hidden shadow-2xl relative border border-white/5 mb-16">

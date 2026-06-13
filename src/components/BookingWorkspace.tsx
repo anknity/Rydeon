@@ -205,7 +205,7 @@ export default function BookingWorkspace() {
   const matchedCaptain = mockCaptains[rideMode === 'bike' ? 0 : rideMode === 'auto' ? 1 : 2] || mockCaptains[0];
 
   return (
-    <div className="bg-slate-50 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto rounded-3xl border border-slate-200 shadow-xl overflow-hidden mt-8 mb-12">
+    <div className="py-4 max-w-7xl mx-auto mb-12 text-left" id="booking-workspace-wrapper-main">
       
       {/* Upper Interactive Dashboard Banner */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-6 mb-8 gap-4">

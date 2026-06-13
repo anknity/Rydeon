@@ -3,6 +3,7 @@ import {
   ShieldCheck, ShieldAlert, Users, PhoneCall, Volume2, 
   MapPin, CheckCircle2, Siren, Play, Circle, Bell, ExternalLink, ShieldAlert as AlertIcon
 } from 'lucide-react';
+import SafetyMeasures from './SafetyMeasures';
 
 export default function SafetyCommand() {
   const [activeCity, setActiveCity] = useState<'blr' | 'delhi' | 'mumbai' | 'pune'>('blr');
@@ -95,7 +96,7 @@ export default function SafetyCommand() {
   };
 
   return (
-    <div className="bg-slate-50 py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto rounded-3xl border border-slate-200 shadow-xl overflow-hidden mt-8 mb-12">
+    <div className="py-4 max-w-7xl mx-auto mb-12 text-left" id="safety-command-wrapper-main">
       
       {/* Page Title Header */}
       <div className="border-b border-slate-200 pb-6 mb-8 text-left">
@@ -264,6 +265,9 @@ export default function SafetyCommand() {
         </div>
 
       </div>
+
+      {/* Bright-yellow Safety Well-being block matching Rapido reference exactly */}
+      <SafetyMeasures />
 
     </div>
   );

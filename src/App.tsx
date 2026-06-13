@@ -173,9 +173,7 @@ export default function App() {
               <h1 className="text-3xl sm:text-5xl font-black text-brand-navy-900 tracking-tight">Designed to Shield Women</h1>
               <p className="text-xs sm:text-sm text-slate-500 font-semibold mt-1.5 leading-relaxed">Choose transit modes managed by 100% certified background cleared professionals, physical safety partition grids, and 24/7 command centre alarms.</p>
             </div>
-            <div className="bg-white rounded-[32px] border border-slate-200/65 p-6 sm:p-8 shadow-sm">
-              <OurServices />
-            </div>
+            <OurServices />
           </div>
         )}
 
@@ -187,9 +185,7 @@ export default function App() {
               <h1 className="text-3xl sm:text-5xl font-black text-brand-navy-900 tracking-tight">Safety Layers In Action</h1>
               <p className="text-xs sm:text-sm text-slate-500 font-semibold mt-1.5 leading-relaxed">From live on-trip voice stress decibel tracking to physical escort patrol modules dispatched immediately, explore how we build trust around the clock.</p>
             </div>
-            <div className="bg-white rounded-[32px] border border-slate-200/65 p-6 sm:p-8 shadow-sm">
-              <WhatWeOffer />
-            </div>
+            <WhatWeOffer />
           </div>
         )}
 
@@ -203,9 +199,7 @@ export default function App() {
         {/* PAGE 5: CAPTAIN PORTAL */}
         {currentView === 'captain' && (
           <div className="animate-fade-in max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="bg-white rounded-[32px] border border-slate-200/65 p-6 sm:p-8 shadow-sm">
-              <CaptainPortal />
-            </div>
+            <CaptainPortal />
           </div>
         )}
 
